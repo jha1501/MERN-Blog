@@ -1,24 +1,25 @@
-import { Timestamp } from 'bson';
+//import { timestamps } from 'bson';
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.schema({
+
+const userSchema = new mongoose.Schema({
     username:{
-        Type: String,
+        type: String,
         required: true,
         unique: true,
     },
     email:{
-        Type: String,
+        type: String,
         required: true,
         unique: true,
     },
     password:{
-        Type: String,
+        type: String,
         required: true,
     }
-},{Timestamps: true}
+},{timestamps: true}
 );
 
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('User', userSchema);
 
 export default User;
